@@ -1,1 +1,141 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-inventory-001-supplier
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/001_supplier.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/001_supplier.sql.
+      changes:
+        - sqlFile:
+            path: 001_supplier.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/001_supplier.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-002-product
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/002_product.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/002_product.sql.
+      changes:
+        - sqlFile:
+            path: 002_product.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/002_product.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-003-service
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/003_service.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/003_service.sql.
+      changes:
+        - sqlFile:
+            path: 003_service.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/003_service.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-004-sale-product
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/004_product_sale.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/004_product_sale.sql.
+      changes:
+        - sqlFile:
+            path: 004_product_sale.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/004_product_sale.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-005-sale-service
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/005_service_sale.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/005_service_sale.sql.
+      changes:
+        - sqlFile:
+            path: 005_service_sale.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/005_service_sale.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-006-seguimiento-product
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/006_product_tracking.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/006_product_tracking.sql.
+      changes:
+        - sqlFile:
+            path: 006_product_tracking.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/006_product_tracking.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-inventory-007-availability-inventory
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/inventory/007_inventory_availability.sql
+      labels: "ddl,tables,inventory"
+      comment: Runs 01_ddl/03_tables/inventory/007_inventory_availability.sql.
+      changes:
+        - sqlFile:
+            path: 007_inventory_availability.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/inventory/007_inventory_availability.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
