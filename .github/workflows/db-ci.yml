@@ -1,0 +1,168 @@
+name: database-ci
+
+on:
+  push:
+    branches:
+      - dev
+      - qa
+      - main
+  pull_request:
+    branches:
+      - dev
+      - qa
+      - main
+  workflow_dispatch:
+
+jobs:
+  validate_structure:
+    name: Validate repository structure
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check required folders
+        run: |
+          set -e
+          test -d .github/workflows
+          test -d docs
+          test -d infra/db
+          test -d infra/db/01_ddl
+          test -d infra/db/02_dml
+          test -d infra/db/03_dcl
+          test -d infra/db/04_tcl
+          test -d infra/db/changelog
+          echo "Estructura base verificada"
+
+  liquibase_validate:
+    name: Validate Liquibase changelog
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sistema_hotelero
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d sistema_hotelero"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+      - name: Wait for PostgreSQL
+        run: |
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            sleep 2
+          done
+      - name: Validate changelog
+        run: |
+          docker run --rm --network host             -v "${GITHUB_WORKSPACE}:/workspace"             -w /workspace             liquibase/liquibase:4.27             --url="jdbc:postgresql://localhost:5432/sistema_hotelero"             --username=postgres             --password=postgres             --changeLogFile=infra/db/changelog/changelog-master.yaml             validate
+
+  liquibase_update:
+    name: Apply database migration
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sistema_hotelero
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d sistema_hotelero"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+      - name: Wait for PostgreSQL
+        run: |
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            sleep 2
+          done
+      - name: Run Liquibase update
+        run: |
+          docker run --rm --network host             -v "${GITHUB_WORKSPACE}:/workspace"             -w /workspace             liquibase/liquibase:4.27             --url="jdbc:postgresql://localhost:5432/sistema_hotelero"             --username=postgres             --password=postgres             --changeLogFile=infra/db/changelog/changelog-master.yaml             update
+
+  liquibase_rollback:
+    name: Verify rollback path
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sistema_hotelero
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d sistema_hotelero"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+      - name: Wait for PostgreSQL
+        run: |
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            sleep 2
+          done
+      - name: Apply migration first
+        run: |
+          docker run --rm --network host             -v "${GITHUB_WORKSPACE}:/workspace"             -w /workspace             liquibase/liquibase:4.27             --url="jdbc:postgresql://localhost:5432/sistema_hotelero"             --username=postgres             --password=postgres             --changeLogFile=infra/db/changelog/changelog-master.yaml             update
+      - name: Roll back last changeset
+        run: |
+          docker run --rm --network host             -v "${GITHUB_WORKSPACE}:/workspace"             -w /workspace             liquibase/liquibase:4.27             --url="jdbc:postgresql://localhost:5432/sistema_hotelero"             --username=postgres             --password=postgres             --changeLogFile=infra/db/changelog/changelog-master.yaml             rollbackCount 1
+
+  smoke_test:
+    name: Run smoke test
+    runs-on: ubuntu-latest
+    services:
+      postgres:
+        image: postgres:16-alpine
+        env:
+          POSTGRES_DB: sistema_hotelero
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        ports:
+          - 5432:5432
+        options: >-
+          --health-cmd="pg_isready -U postgres -d sistema_hotelero"
+          --health-interval=10s
+          --health-timeout=5s
+          --health-retries=10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install PostgreSQL client
+        run: |
+          sudo apt-get update
+          sudo apt-get install -y postgresql-client
+      - name: Wait for PostgreSQL
+        run: |
+          until pg_isready -h localhost -p 5432 -U postgres; do
+            sleep 2
+          done
+      - name: Apply migration
+        run: |
+          docker run --rm --network host             -v "${GITHUB_WORKSPACE}:/workspace"             -w /workspace             liquibase/liquibase:4.27             --url="jdbc:postgresql://localhost:5432/sistema_hotelero"             --username=postgres             --password=postgres             --changeLogFile=infra/db/changelog/changelog-master.yaml             update
+      - name: Execute smoke test
+        run: |
+          export PGPASSWORD=ariel5253
+          psql -h localhost -p 5432 -U ariel5253 -d sistema_hotelero -f infra/db/checks/001_smoke_test.sql
