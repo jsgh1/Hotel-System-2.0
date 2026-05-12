@@ -1,0 +1,14 @@
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.customer;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.person;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.company;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.day_type;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.payment_method;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.legal_information;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.employee;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.price;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON distribution.room;
+DROP TRIGGER IF EXISTS trg_room_capacity ON distribution.room;
+DROP TRIGGER IF EXISTS trg_reservation_no_overlap ON service_delivery.room_reservation;
+DROP TRIGGER IF EXISTS trg_product_sale_stock ON inventory.product_sale;
+DROP TRIGGER IF EXISTS trg_pre_invoice_total ON billing.pre_invoice;
+DROP TRIGGER IF EXISTS trg_invoice_total ON billing.invoice;
