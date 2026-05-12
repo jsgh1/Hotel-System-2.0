@@ -1,1 +1,101 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-service-delivery-001-room-reservation
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/service_delivery/001_room_reservation.sql
+      labels: "ddl,tables,service_delivery"
+      comment: Runs 01_ddl/03_tables/service_delivery/001_room_reservation.sql.
+      changes:
+        - sqlFile:
+            path: 001_room_reservation.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/service_delivery/001_room_reservation.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-service-delivery-002-room-cancellation
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/service_delivery/002_room_cancellation.sql
+      labels: "ddl,tables,service_delivery"
+      comment: Runs 01_ddl/03_tables/service_delivery/002_room_cancellation.sql.
+      changes:
+        - sqlFile:
+            path: 002_room_cancellation.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/service_delivery/002_room_cancellation.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-service-delivery-003-stay
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/service_delivery/003_stay.sql
+      labels: "ddl,tables,service_delivery"
+      comment: Runs 01_ddl/03_tables/service_delivery/003_stay.sql.
+      changes:
+        - sqlFile:
+            path: 003_stay.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/service_delivery/003_stay.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-service-delivery-004-check-in
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/service_delivery/004_check_in.sql
+      labels: "ddl,tables,service_delivery"
+      comment: Runs 01_ddl/03_tables/service_delivery/004_check_in.sql.
+      changes:
+        - sqlFile:
+            path: 004_check_in.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/service_delivery/004_check_in.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-service-delivery-005-check-out
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/service_delivery/005_check_out.sql
+      labels: "ddl,tables,service_delivery"
+      comment: Runs 01_ddl/03_tables/service_delivery/005_check_out.sql.
+      changes:
+        - sqlFile:
+            path: 005_check_out.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/service_delivery/005_check_out.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
