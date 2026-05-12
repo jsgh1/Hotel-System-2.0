@@ -1,0 +1,48 @@
+# Local environment for the hotel system database.
+name: sistema-hotelero-local
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: sistema-hotelero-db-local
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sistema_hotelero}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    ports:
+      - "${POSTGRES_PORT:-5445}:5432"
+    volumes:
+      - sistema_hotelero_data:/var/lib/postgresql/data
+      - ../scripts:/scripts:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U $${POSTGRES_USER} -d $${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+
+  liquibase:
+    image: liquibase/liquibase:4.25
+    container_name: sistema-hotelero-liquibase
+    restart: "no"
+    depends_on:
+      postgres:
+        condition: service_healthy
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB:-sistema_hotelero}
+      POSTGRES_USER: ${POSTGRES_USER:-postgres}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:-postgres}
+    volumes:
+      - ../:/liquibase/workspace
+    working_dir: /liquibase/workspace
+    entrypoint: ["/bin/sh", "-c"]
+    command: >
+      liquibase
+      --url="jdbc:postgresql://postgres:5432/$${POSTGRES_DB}"
+      --username="$${POSTGRES_USER}"
+      --password="$${POSTGRES_PASSWORD}"
+      --changeLogFile=changelog/changelog-master.yaml
+      update
+
+volumes:
+  sistema_hotelero_data:
