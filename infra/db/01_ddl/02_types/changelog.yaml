@@ -1,1 +1,21 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 003-ddl-types-001-domain-types
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/02_types/001_domain_types.sql
+      labels: "ddl,types"
+      comment: Runs 01_ddl/02_types/001_domain_types.sql.
+      changes:
+        - sqlFile:
+            path: 001_domain_types.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/02_types/001_domain_types.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
