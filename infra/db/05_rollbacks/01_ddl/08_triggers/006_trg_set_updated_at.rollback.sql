@@ -1,0 +1,9 @@
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.customer;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.person;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.company;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.day_type;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.payment_method;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.legal_information;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.employee;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON configuration.price;
+DROP TRIGGER IF EXISTS trg_set_updated_at ON distribution.room;
