@@ -1,1 +1,161 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-security-001-role
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/001_role.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/001_role.sql.
+      changes:
+        - sqlFile:
+            path: 001_role.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/001_role.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-002-permission
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/002_permission.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/002_permission.sql.
+      changes:
+        - sqlFile:
+            path: 002_permission.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/002_permission.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-003-module
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/003_module.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/003_module.sql.
+      changes:
+        - sqlFile:
+            path: 003_module.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/003_module.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-004-screen
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/004_screen.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/004_screen.sql.
+      changes:
+        - sqlFile:
+            path: 004_screen.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/004_screen.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-005-app_user
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/005_app_user.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/005_app_user.sql.
+      changes:
+        - sqlFile:
+            path: 005_app_user.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/005_app_user.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-006-app_user-role
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/006_app_user_role.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/006_app_user_role.sql.
+      changes:
+        - sqlFile:
+            path: 006_app_user_role.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/006_app_user_role.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-007-role-permission
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/007_role_permission.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/007_role_permission.sql.
+      changes:
+        - sqlFile:
+            path: 007_role_permission.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/007_role_permission.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-security-008-module-screen
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/security/008_module_screen.sql
+      labels: "ddl,tables,security"
+      comment: Runs 01_ddl/03_tables/security/008_module_screen.sql.
+      changes:
+        - sqlFile:
+            path: 008_module_screen.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/security/008_module_screen.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
