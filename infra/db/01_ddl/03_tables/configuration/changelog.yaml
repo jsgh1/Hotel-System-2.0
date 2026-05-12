@@ -1,1 +1,161 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-configuration-001-customer
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/001_customer.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/001_customer.sql.
+      changes:
+        - sqlFile:
+            path: 001_customer.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/001_customer.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-002-person
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/002_person.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/002_person.sql.
+      changes:
+        - sqlFile:
+            path: 002_person.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/002_person.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-003-company
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/003_company.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/003_company.sql.
+      changes:
+        - sqlFile:
+            path: 003_company.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/003_company.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-004-day-type
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/004_day_type.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/004_day_type.sql.
+      changes:
+        - sqlFile:
+            path: 004_day_type.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/004_day_type.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-005-payment-method
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/005_payment_method.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/005_payment_method.sql.
+      changes:
+        - sqlFile:
+            path: 005_payment_method.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/005_payment_method.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-006-information-legal
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/006_legal_information.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/006_legal_information.sql.
+      changes:
+        - sqlFile:
+            path: 006_legal_information.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/006_legal_information.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-007-employee
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/007_employee.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/007_employee.sql.
+      changes:
+        - sqlFile:
+            path: 007_employee.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/007_employee.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-configuration-008-price
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/configuration/008_price.sql
+      labels: "ddl,tables,configuration"
+      comment: Runs 01_ddl/03_tables/configuration/008_price.sql.
+      changes:
+        - sqlFile:
+            path: 008_price.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/configuration/008_price.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
