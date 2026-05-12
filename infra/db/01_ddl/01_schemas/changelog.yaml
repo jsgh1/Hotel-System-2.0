@@ -1,1 +1,21 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 002-ddl-schemas-001-schemas
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/01_schemas/001_schemas.sql
+      labels: "ddl,schemas"
+      comment: Runs 01_ddl/01_schemas/001_schemas.sql.
+      changes:
+        - sqlFile:
+            path: 001_schemas.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/01_schemas/001_schemas.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false

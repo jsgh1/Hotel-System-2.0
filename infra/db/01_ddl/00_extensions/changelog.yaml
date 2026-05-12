@@ -1,1 +1,21 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 001-ddl-extensions-001-extensions
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/00_extensions/001_extensions.sql
+      labels: "ddl,extensions"
+      comment: Runs 01_ddl/00_extensions/001_extensions.sql.
+      changes:
+        - sqlFile:
+            path: 001_extensions.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/00_extensions/001_extensions.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
