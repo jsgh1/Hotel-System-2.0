@@ -1,1 +1,81 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-billing-001-pre-invoice
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/billing/001_pre_invoice.sql
+      labels: "ddl,tables,billing"
+      comment: Runs 01_ddl/03_tables/billing/001_pre_invoice.sql.
+      changes:
+        - sqlFile:
+            path: 001_pre_invoice.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/001_pre_invoice.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-billing-002-invoice
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/billing/002_invoice.sql
+      labels: "ddl,tables,billing"
+      comment: Runs 01_ddl/03_tables/billing/002_invoice.sql.
+      changes:
+        - sqlFile:
+            path: 002_invoice.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/002_invoice.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-billing-003-payment-parcial
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/billing/003_partial_payment.sql
+      labels: "ddl,tables,billing"
+      comment: Runs 01_ddl/03_tables/billing/003_partial_payment.sql.
+      changes:
+        - sqlFile:
+            path: 003_partial_payment.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/003_partial_payment.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-billing-004-purchase-detail
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/billing/004_purchase_detail.sql
+      labels: "ddl,tables,billing"
+      comment: Runs 01_ddl/03_tables/billing/004_purchase_detail.sql.
+      changes:
+        - sqlFile:
+            path: 004_purchase_detail.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/billing/004_purchase_detail.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
