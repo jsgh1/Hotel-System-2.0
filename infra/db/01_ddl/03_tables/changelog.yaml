@@ -1,0 +1,25 @@
+databaseChangeLog:
+  - include:
+      file: configuration/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: security/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: distribution/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: service_delivery/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: inventory/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: billing/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: notification/changelog.yaml
+      relativeToChangelogFile: true
+  - include:
+      file: maintenance/changelog.yaml
+      relativeToChangelogFile: true
