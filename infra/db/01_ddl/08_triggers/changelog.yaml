@@ -1,1 +1,121 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 022-ddl-triggers-001-trg-room-capacity
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/001_trg_room_capacity.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/001_trg_room_capacity.sql.
+      changes:
+        - sqlFile:
+            path: 001_trg_room_capacity.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/001_trg_room_capacity.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 023-ddl-triggers-002-trg-reservation-no-overlap
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/002_trg_reservation_no_overlap.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/002_trg_reservation_no_overlap.sql.
+      changes:
+        - sqlFile:
+            path: 002_trg_reservation_no_overlap.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/002_trg_reservation_no_overlap.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 024-ddl-triggers-003-trg-sale-product-stock
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/003_trg_product_sale_stock.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/003_trg_product_sale_stock.sql.
+      changes:
+        - sqlFile:
+            path: 003_trg_product_sale_stock.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/003_trg_product_sale_stock.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 025-ddl-triggers-004-trg-pre-invoice-total
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/004_trg_pre_invoice_total.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/004_trg_pre_invoice_total.sql.
+      changes:
+        - sqlFile:
+            path: 004_trg_pre_invoice_total.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/004_trg_pre_invoice_total.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 026-ddl-triggers-005-trg-invoice-total
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/005_trg_invoice_total.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/005_trg_invoice_total.sql.
+      changes:
+        - sqlFile:
+            path: 005_trg_invoice_total.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/005_trg_invoice_total.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 027-ddl-triggers-006-trg-set-updated-at
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/08_triggers/006_trg_set_updated_at.sql
+      labels: "ddl,triggers"
+      comment: Runs 01_ddl/08_triggers/006_trg_set_updated_at.sql.
+      changes:
+        - sqlFile:
+            path: 006_trg_set_updated_at.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/08_triggers/006_trg_set_updated_at.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
