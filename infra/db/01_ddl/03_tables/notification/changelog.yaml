@@ -1,1 +1,81 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-notification-001-promotion
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/notification/001_promotion.sql
+      labels: "ddl,tables,notification"
+      comment: Runs 01_ddl/03_tables/notification/001_promotion.sql.
+      changes:
+        - sqlFile:
+            path: 001_promotion.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/notification/001_promotion.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-notification-002-alert
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/notification/002_alert.sql
+      labels: "ddl,tables,notification"
+      comment: Runs 01_ddl/03_tables/notification/002_alert.sql.
+      changes:
+        - sqlFile:
+            path: 002_alert.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/notification/002_alert.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-notification-003-terms-condition_text
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/notification/003_terms_condition.sql
+      labels: "ddl,tables,notification"
+      comment: Runs 01_ddl/03_tables/notification/003_terms_condition.sql.
+      changes:
+        - sqlFile:
+            path: 003_terms_condition.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/notification/003_terms_condition.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-notification-004-loyalty-customer
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/notification/004_customer_loyalty.sql
+      labels: "ddl,tables,notification"
+      comment: Runs 01_ddl/03_tables/notification/004_customer_loyalty.sql.
+      changes:
+        - sqlFile:
+            path: 004_customer_loyalty.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/notification/004_customer_loyalty.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
