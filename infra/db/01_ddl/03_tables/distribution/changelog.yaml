@@ -1,1 +1,141 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-distribution-001-branch
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/001_branch.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/001_branch.sql.
+      changes:
+        - sqlFile:
+            path: 001_branch.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/001_branch.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-002-room-type
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/002_room_type.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/002_room_type.sql.
+      changes:
+        - sqlFile:
+            path: 002_room_type.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/002_room_type.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-003-room-status
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/003_room_status.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/003_room_status.sql.
+      changes:
+        - sqlFile:
+            path: 003_room_status.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/003_room_status.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-004-room
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/004_room.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/004_room.sql.
+      changes:
+        - sqlFile:
+            path: 004_room.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/004_room.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-005-availability-room
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/005_room_availability.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/005_room_availability.sql.
+      changes:
+        - sqlFile:
+            path: 005_room_availability.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/005_room_availability.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-006-room-catalog
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/006_room_catalog.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/006_room_catalog.sql.
+      changes:
+        - sqlFile:
+            path: 006_room_catalog.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/006_room_catalog.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-distribution-007-fk-price-room-type
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/distribution/007_fk_price_room_type.sql
+      labels: "ddl,tables,distribution"
+      comment: Runs 01_ddl/03_tables/distribution/007_fk_price_room_type.sql.
+      changes:
+        - sqlFile:
+            path: 007_fk_price_room_type.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/distribution/007_fk_price_room_type.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
