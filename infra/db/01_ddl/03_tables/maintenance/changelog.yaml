@@ -1,1 +1,81 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: ddl-tables-maintenance-001-maintenance-room
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/maintenance/001_room_maintenance.sql
+      labels: "ddl,tables,maintenance"
+      comment: Runs 01_ddl/03_tables/maintenance/001_room_maintenance.sql.
+      changes:
+        - sqlFile:
+            path: 001_room_maintenance.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/maintenance/001_room_maintenance.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-maintenance-002-maintenance-uso
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/maintenance/002_maintenance_usage.sql
+      labels: "ddl,tables,maintenance"
+      comment: Runs 01_ddl/03_tables/maintenance/002_maintenance_usage.sql.
+      changes:
+        - sqlFile:
+            path: 002_maintenance_usage.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/maintenance/002_maintenance_usage.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-maintenance-003-maintenance-remodeling
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/maintenance/003_maintenance_remodeling.sql
+      labels: "ddl,tables,maintenance"
+      comment: Runs 01_ddl/03_tables/maintenance/003_maintenance_remodeling.sql.
+      changes:
+        - sqlFile:
+            path: 003_maintenance_remodeling.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/maintenance/003_maintenance_remodeling.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: ddl-tables-maintenance-004-dashboard-maintenance
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/03_tables/maintenance/004_maintenance_dashboard.sql
+      labels: "ddl,tables,maintenance"
+      comment: Runs 01_ddl/03_tables/maintenance/004_maintenance_dashboard.sql.
+      changes:
+        - sqlFile:
+            path: 004_maintenance_dashboard.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../../05_rollbacks/01_ddl/03_tables/maintenance/004_maintenance_dashboard.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
