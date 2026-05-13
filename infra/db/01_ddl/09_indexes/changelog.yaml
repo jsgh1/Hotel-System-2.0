@@ -1,1 +1,21 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 035-ddl-indexes-001-domain-indexes
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/09_indexes/001_domain_indexes.sql
+      labels: "ddl,indexes"
+      comment: Runs 01_ddl/09_indexes/001_domain_indexes.sql.
+      changes:
+        - sqlFile:
+            path: 001_domain_indexes.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/09_indexes/001_domain_indexes.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
