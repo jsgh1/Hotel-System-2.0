@@ -1,0 +1,43 @@
+SET search_path TO configuration, public;
+
+-- Rollback employee records
+DELETE FROM configuration.employee WHERE id IN (
+  '11111111-1111-1111-1111-111111111116',
+  '11111111-1111-1111-1111-111111111117',
+  '11111111-1111-1111-1111-111111111118'
+)::uuid;
+
+-- Rollback legal information
+DELETE FROM configuration.legal_information WHERE id = '11111111-1111-1111-1111-111111111115'::uuid;
+
+-- Rollback customer records
+DELETE FROM configuration.customer WHERE id IN (
+  '11111111-1111-1111-1111-111111111112',
+  '11111111-1111-1111-1111-111111111113',
+  '11111111-1111-1111-1111-111111111114'
+)::uuid;
+
+-- Rollback person records
+DELETE FROM configuration.person WHERE id IN (
+  '11111111-1111-1111-1111-111111111109',
+  '11111111-1111-1111-1111-111111111110',
+  '11111111-1111-1111-1111-111111111111'
+)::uuid;
+
+-- Rollback payment methods
+DELETE FROM configuration.payment_method WHERE id IN (
+  '11111111-1111-1111-1111-111111111106',
+  '11111111-1111-1111-1111-111111111107',
+  '11111111-1111-1111-1111-111111111108'
+)::uuid;
+
+-- Rollback day types
+DELETE FROM configuration.day_type WHERE id IN (
+  '11111111-1111-1111-1111-111111111102',
+  '11111111-1111-1111-1111-111111111103',
+  '11111111-1111-1111-1111-111111111104',
+  '11111111-1111-1111-1111-111111111105'
+)::uuid;
+
+-- Rollback company
+DELETE FROM configuration.company WHERE id = '11111111-1111-1111-1111-111111111101'::uuid;
