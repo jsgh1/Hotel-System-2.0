@@ -26,14 +26,6 @@ Nadie aprueba ni fusiona su propia rama. La revision siempre la hace otra person
 | Stiven | HU-12, HU-13, HU-14, HU-15, HU-16, HU-17 | Modelo fisico y DML inicial. |
 | Jose | HU-18, HU-19, HU-20, HU-21, HU-22 | DML restante, autenticacion, DCL y TCL. |
 
-## Convencion sugerida de ramas
-
-- `feature/hu-01-flujo-ramas`
-- `feature/hu-06-docker-postgres`
-- `feature/hu-15-dml-configuration`
-
-Cada rama debe incluir un mensaje de commit claro y una referencia directa a la HU trabajada.
-
 ## Orden sugerido de subida
 
 1. Juan sube primero la estructura vacia `.github`, `docs` e `infra/db` con las carpetas base.
