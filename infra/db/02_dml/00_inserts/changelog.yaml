@@ -1,1 +1,105 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: dml-inserts-001-configuration
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/001_configuration.sql
+      labels: "dml,inserts,configuration"
+      comment: Runs 02_dml/00_inserts/001_configuration.sql.
+      changes:
+        - sqlFile:
+            path: 001_configuration.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-002-security-auth
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/002_security.sql
+      labels: "dml,inserts,security,auth"
+      comment: Seeds the database auth user and related security data.
+      changes:
+        - sqlFile:
+            path: 002_security.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-003-distribution
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/003_distribution.sql
+      labels: "dml,inserts,distribution"
+      comment: Seeds distribution domain data for branches and rooms.
+      changes:
+        - sqlFile:
+            path: 003_distribution.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-004-service-delivery
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/004_service_delivery.sql
+      labels: "dml,inserts,service_delivery"
+      comment: Seeds service delivery domain data for reservations and stays.
+      changes:
+        - sqlFile:
+            path: 004_service_delivery.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-005-inventory
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/005_inventory.sql
+      labels: "dml,inserts,inventory"
+      comment: Seeds inventory domain data for products and services.
+      changes:
+        - sqlFile:
+            path: 005_inventory.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-006-billing
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/006_billing.sql
+      labels: "dml,inserts,billing"
+      comment: Seeds billing domain data for invoices and payments.
+      changes:
+        - sqlFile:
+            path: 006_billing.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-007-notification
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/007_notification.sql
+      labels: "dml,inserts,notification"
+      comment: Seeds notification domain data for alerts and promotions.
+      changes:
+        - sqlFile:
+            path: 007_notification.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: dml-inserts-008-maintenance
+      author: Juan
+      logicalFilePath: 02_dml/00_inserts/008_maintenance.sql
+      labels: "dml,inserts,maintenance"
+      comment: Seeds maintenance domain data for maintenance and remodeling.
+      changes:
+        - sqlFile:
+            path: 008_maintenance.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
