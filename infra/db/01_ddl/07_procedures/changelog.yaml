@@ -1,1 +1,101 @@
-databaseChangeLog:[]
+databaseChangeLog:
+  - changeSet:
+      id: 017-ddl-procedures-001-sp-create-reservation
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/07_procedures/001_sp_create_reservation.sql
+      labels: "ddl,procedures"
+      comment: Runs 01_ddl/07_procedures/001_sp_create_reservation.sql.
+      changes:
+        - sqlFile:
+            path: 001_sp_create_reservation.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/001_sp_create_reservation.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 018-ddl-procedures-002-sp-soft-delete
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/07_procedures/002_sp_soft_delete.sql
+      labels: "ddl,procedures"
+      comment: Runs 01_ddl/07_procedures/002_sp_soft_delete.sql.
+      changes:
+        - sqlFile:
+            path: 002_sp_soft_delete.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/002_sp_soft_delete.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 019-ddl-procedures-003-sp-registrar-entrada-product
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/07_procedures/003_sp_register_product_entry.sql
+      labels: "ddl,procedures"
+      comment: Runs 01_ddl/07_procedures/003_sp_register_product_entry.sql.
+      changes:
+        - sqlFile:
+            path: 003_sp_register_product_entry.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/003_sp_register_product_entry.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 020-ddl-procedures-004-sp-emitir-invoice
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/07_procedures/004_sp_issue_invoice.sql
+      labels: "ddl,procedures"
+      comment: Runs 01_ddl/07_procedures/004_sp_issue_invoice.sql.
+      changes:
+        - sqlFile:
+            path: 004_sp_issue_invoice.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/004_sp_issue_invoice.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
+  - changeSet:
+      id: 021-ddl-procedures-005-sp-cerrar-maintenance
+      author: DannaValentinaBarrios
+      logicalFilePath: 01_ddl/07_procedures/005_sp_close_maintenance.sql
+      labels: "ddl,procedures"
+      comment: Runs 01_ddl/07_procedures/005_sp_close_maintenance.sql.
+      changes:
+        - sqlFile:
+            path: 005_sp_close_maintenance.sql
+            relativeToChangelogFile: true
+            splitStatements: false
+            endDelimiter: ;
+            stripComments: false
+      rollback:
+        - sqlFile:
+            path: ../../05_rollbacks/01_ddl/07_procedures/005_sp_close_maintenance.rollback.sql
+            relativeToChangelogFile: true
+            splitStatements: true
+            endDelimiter: ;
+            stripComments: false
